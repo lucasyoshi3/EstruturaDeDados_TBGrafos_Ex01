@@ -94,6 +94,33 @@ public class Grafo {
 		return true;
 	}
 
+	public boolean eCiclico(int[][] matriz) {
+		// TODO Auto-generated method stub
+		int tamanho=matriz.length;
+		for(int i=0;i<tamanho;i++) {
+			boolean [] visitados=new boolean[tamanho];
+			Stack<Integer> ordem= new Stack<Integer>();
+			ordem.push(i);
+			
+			while (!ordem.isEmpty()) {
+	            int vertice = ordem.pop();
+
+	            if (visitados[vertice]) {
+	                return true;
+	            }
+
+	            visitados[vertice] = true;
+
+	            for (int j = 0; j < tamanho; j++) {
+	                if (matriz[vertice][j] == 1 && !visitados[j]) {
+	                    ordem.push(j);
+	                }
+	            }
+	        }
+		}
+		return false;
+	}
+
 }
 
 
