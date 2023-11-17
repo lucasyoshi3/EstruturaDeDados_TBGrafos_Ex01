@@ -6,13 +6,13 @@ import java.util.Stack;
 
 public class Grafo {
 
-	public void arestas(int[][] matriz, char[] alfabeto) {
+	public void arestas(int[][] matriz) {
 		// TODO Auto-generated method stub
 		int l=0;
 		int c=0;
 		while(l<matriz.length) {
 			if(matriz[l][c]==1) {
-				System.out.println("Aresta "+alfabeto[l]+" e "+alfabeto[c]);
+				System.out.println("Aresta "+l+" e "+c);
 			}
 			if(c==matriz[0].length-1) {
 				l++;
@@ -22,7 +22,7 @@ public class Grafo {
 		}
 	}
 
-	public void tipoAresta(int[][] matriz, char[] alfabeto) {
+	public void tipoAresta(int[][] matriz) {
 		// TODO Auto-generated method stub
 		boolean naoDirecionado=true;
 		for(int i=0;i<matriz.length;i++) {
@@ -41,7 +41,7 @@ public class Grafo {
 		}
 	}
 
-	public void grau(int[][] matriz, char[] alfabeto) {
+	public void grau(int[][] matriz) {
 		// TODO Auto-generated method stub
 		int soma=0;
 		int i,j;
@@ -49,12 +49,12 @@ public class Grafo {
 			for(j=0;j<matriz[i].length;j++) {
 				soma+=matriz[i][j];
 			}
-			System.out.println("Grau da vertice da "+alfabeto[i]+": "+soma);
+			System.out.println("Grau da vertice da "+i+": "+soma);
 			soma=0;
 		}
 	}
 
-	public boolean eConexo(int[][] matriz, char[] alfabeto) {
+	public boolean eConexo(int[][] matriz) {
 		// TODO Auto-generated method stub
 		for(int i=0;i<matriz.length;i++) {
 			if(matriz[0][i]==1) {
@@ -119,6 +119,21 @@ public class Grafo {
 	        }
 		}
 		return false;
+	}
+
+	public void listaAdjacencias(int[][] matriz) {
+		// TODO Auto-generated method stub
+		int tamanho=matriz.length;
+		System.out.println("Lista de adjacencias");
+		for(int i=0;i<tamanho;i++) {
+			System.out.print(i+": ");
+			for(int j=0;j<tamanho;j++) {
+				if(matriz[i][j]==1) {
+					System.out.print(" "+j);
+				}
+			}
+			System.out.println();
+		}
 	}
 
 }

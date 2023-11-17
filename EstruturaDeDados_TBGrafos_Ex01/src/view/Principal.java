@@ -12,12 +12,11 @@ public class Principal {
 			    {1, 1, 0, 0, 1},
 			    {0, 1, 0, 1, 0}
 			};
-		char[] alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 		
-		grafo.arestas(matriz, alfabeto);
-		grafo.tipoAresta(matriz,alfabeto);
-		grafo.grau(matriz,alfabeto);
-		if(grafo.eConexo(matriz,alfabeto)) {
+		grafo.arestas(matriz);
+		grafo.tipoAresta(matriz);
+		grafo.grau(matriz);
+		if(grafo.eConexo(matriz)) {
 			System.out.println("E conexo");
 		}else {
 			System.out.println("Não é conexo");
@@ -28,5 +27,6 @@ public class Principal {
 		}else {
 			System.out.println("o grafo não é ciclico");
 		}
+		grafo.listaAdjacencias(matriz);
 	}
 }
