@@ -10,9 +10,10 @@ public class Grafo {
 		// TODO Auto-generated method stub
 		int l=0;
 		int c=0;
+		System.out.print("Arestas:[");
 		while(l<matriz.length) {
 			if(matriz[l][c]==1) {
-				System.out.println("Aresta "+l+" e "+c);
+				System.out.println("("+l+", "+c+")");
 			}
 			if(c==matriz[0].length-1) {
 				l++;
@@ -20,6 +21,7 @@ public class Grafo {
 			}
 			c++;
 		}
+		System.out.println("]");
 	}
 
 	public void tipoAresta(int[][] matriz) {
@@ -137,10 +139,3 @@ public class Grafo {
 	}
 
 }
-
-
-
-
-
-
-	
